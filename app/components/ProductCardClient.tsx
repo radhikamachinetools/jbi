@@ -26,11 +26,12 @@ export default function ProductCardClient({
 }: ProductCardProps) {
   return (
     <motion.div
-      className="group bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:-translate-y-2"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      className="group bg-white rounded-2xl shadow-sm hover:shadow-lg overflow-hidden border border-green-100 hover:border-brand-green/50 transition-all duration-500 hover:-translate-y-2"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: index * 0.1, type: "spring", bounce: 0.4 }}
+      whileHover={{ scale: 1.03, rotate: 1 }}
     >
       <div className="relative h-64 sm:h-72 overflow-hidden">
         <Image
@@ -39,11 +40,11 @@ export default function ProductCardClient({
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Category Badge */}
         <div className="absolute top-4 left-4">
-          <span className="bg-brand-green text-white px-3 py-1 rounded-full text-xs font-medium">
+          <span className="bg-brand-green text-white px-3 py-1 rounded-full text-xs font-medium shadow-md">
             {product.category}
           </span>
         </div>

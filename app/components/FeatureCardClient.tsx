@@ -17,15 +17,16 @@ export default function FeatureCardClient({
 }: FeatureCardProps) {
   return (
     <motion.div
-      className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-500 hover:-translate-y-2"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      className="group bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-md hover:shadow-xl border border-green-200 hover:border-brand-green transition-all duration-500 hover:-translate-y-3"
+      initial={{ opacity: 0, y: 50, rotate: -5 }}
+      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+      whileHover={{ y: -10, rotate: 2, scale: 1.02 }}
     >
       <div className="text-center">
         {/* Icon Container */}
-        <div className="w-20 h-20 bg-gradient-to-br from-brand-green-light to-brand-green rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+        <div className="w-20 h-20 bg-gradient-to-br from-brand-green-light to-brand-green rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
           {icon}
         </div>
 
@@ -41,7 +42,10 @@ export default function FeatureCardClient({
       </div>
 
       {/* Decorative Element */}
-      <div className="mt-6 w-12 h-1 bg-gradient-to-r from-brand-green to-brand-accent rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <motion.div 
+        className="mt-6 w-12 h-1 bg-gradient-to-r from-brand-green to-brand-accent rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        whileHover={{ width: 48, height: 6 }}
+      ></motion.div>
     </motion.div>
   );
 }

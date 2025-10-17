@@ -6,25 +6,25 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Stone Factory Industrial Theme */
-  --color-brand-green-light: #A78BFA;
-  --color-brand-green: #7C3AED;
-  --color-brand-green-dark: #5B21B6;
-  --color-brand-green-deeper: #3C1A78;
-  --color-brand-accent: #FCD34D;
+  /* Light Rama Color Theme */
+  --color-brand-green-light: #86EFAC;
+  --color-brand-green: #22C55E;
+  --color-brand-green-dark: #16A34A;
+  --color-brand-green-deeper: #15803D;
+  --color-brand-accent: #FBBF24;
   
-  /* Industrial Stone Colors */
-  --color-dark-gray: #1F2937;
-  --color-medium-gray: #4B5563;
-  --color-light-gray: #F8FAFC;
-  --color-border: #E2E8F0;
-  --color-border-light: #F1F5F9;
+  /* Light Fresh Colors */
+  --color-dark-gray: #374151;
+  --color-medium-gray: #6B7280;
+  --color-light-gray: #F0FDF4;
+  --color-border: #BBF7D0;
+  --color-border-light: #DCFCE7;
   
   /* Background & Text */
-  --color-background: #FEFEFE;
-  --color-foreground: #1F2937;
-  --color-muted: #64748B;
-  --color-muted-light: #94A3B8;
+  --color-background: #F7FFFC;
+  --color-foreground: #374151;
+  --color-muted: #6B7280;
+  --color-muted-light: #9CA3AF;
   
   /* Status Colors */
   --color-success: #10B981;

@@ -50,8 +50,8 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className={`bg-gradient-to-r from-brand-green-dark to-brand-green text-white shadow-lg sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "shadow-xl backdrop-blur-sm bg-opacity-95" : ""
+      <header className={`bg-gradient-to-r from-brand-green-deeper via-brand-green-dark to-brand-green text-white shadow-2xl sticky top-0 z-50 transition-all duration-500 border-b-4 border-brand-accent/30 ${
+        isScrolled ? "shadow-2xl backdrop-blur-md bg-opacity-90 border-brand-accent/50" : ""
       }`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -64,7 +64,7 @@ const Header = () => {
                     alt="Jai Balaji Industries Logo"
                     width={45}
                     height={45}
-                    className="lg:w-[55px] lg:h-[55px] rounded-full ring-2 ring-white/20"
+                    className="lg:w-[55px] lg:h-[55px] rounded-full ring-4 ring-brand-accent/40 shadow-xl hover:ring-brand-accent/60 transition-all duration-300"
                     priority
                   />
                 </div>
@@ -130,7 +130,7 @@ const Header = () => {
             <div className="hidden lg:block">
               <Link
                 href="/contact"
-                className="bg-brand-accent text-brand-green-dark font-semibold px-6 py-2.5 rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-gradient-to-r from-brand-accent to-yellow-400 text-brand-green-deeper font-bold px-8 py-3 rounded-2xl hover:from-yellow-400 hover:to-brand-accent transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-2xl border-2 border-white/20"
               >
                 Get Quote
               </Link>

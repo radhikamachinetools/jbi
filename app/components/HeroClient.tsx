@@ -9,17 +9,17 @@ export default function HeroClient() {
   return (
     <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="space-y-6"
+        transition={{ duration: 1.5, type: "spring", bounce: 0.4 }}
+        className="space-y-8"
       >
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium"
+          transition={{ duration: 1.0, delay: 0.5, type: "spring", bounce: 0.6 }}
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-green-100 to-emerald-100 backdrop-blur-sm border border-brand-green/30 rounded-full px-5 py-2 text-sm font-medium shadow-md"
         >
           <span className="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
           Trusted by 500+ Industries Worldwide
@@ -27,13 +27,13 @@ export default function HeroClient() {
 
         {/* Main Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.8, type: "spring", stiffness: 100 }}
           className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight"
         >
           Engineering the Future of{" "}
-          <span className="text-brand-accent">Stone Processing</span>
+          <span className="text-brand-green drop-shadow-lg">Stone Processing</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -77,9 +77,9 @@ export default function HeroClient() {
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.5, staggerChildren: 0.1 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto"
         >
           <div className="text-center">
