@@ -6,25 +6,25 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Enhanced Green Theme - Based on Figma Design */
-  --color-brand-green-light: #10B981;
-  --color-brand-green: #059669;
-  --color-brand-green-dark: #047857;
-  --color-brand-green-deeper: #065f46;
-  --color-brand-accent: #34D399;
+  /* Stone Factory Industrial Theme */
+  --color-brand-green-light: #A78BFA;
+  --color-brand-green: #7C3AED;
+  --color-brand-green-dark: #5B21B6;
+  --color-brand-green-deeper: #3C1A78;
+  --color-brand-accent: #FCD34D;
   
-  /* Neutral Colors */
-  --color-dark-gray: #111827;
-  --color-medium-gray: #374151;
-  --color-light-gray: #F9FAFB;
-  --color-border: #E5E7EB;
-  --color-border-light: #F3F4F6;
+  /* Industrial Stone Colors */
+  --color-dark-gray: #1F2937;
+  --color-medium-gray: #4B5563;
+  --color-light-gray: #F8FAFC;
+  --color-border: #E2E8F0;
+  --color-border-light: #F1F5F9;
   
   /* Background & Text */
-  --color-background: #ffffff;
-  --color-foreground: #111827;
-  --color-muted: #6B7280;
-  --color-muted-light: #9CA3AF;
+  --color-background: #FEFEFE;
+  --color-foreground: #1F2937;
+  --color-muted: #64748B;
+  --color-muted-light: #94A3B8;
   
   /* Status Colors */
   --color-success: #10B981;
