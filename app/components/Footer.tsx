@@ -17,7 +17,7 @@ const Footer = () => {
               <div className="relative">
                 <Image
                   src="/images/radhika-logo.png"
-                  alt="Radhika Machine Tools Logo"
+                  alt="Jai Balaji Industries Logo"
                   width={50}
                   height={50}
                   className="rounded-full ring-2 ring-white/20"
@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
               <div>
                 <span className="text-xl font-bold text-white block">
-                  Radhika Machine Tools
+                  Jai Balaji Industries
                 </span>
                 <span className="text-xs text-green-100">
                   Engineering Excellence
@@ -40,28 +40,15 @@ const Footer = () => {
             
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.jbijodhpur.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-brand-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                title="Visit our website"
               >
-                <Facebook size={18} />
-              </Link>
-              <Link
-                href="#"
-                className="w-10 h-10 bg-white/10 hover:bg-brand-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <Twitter size={18} />
-              </Link>
-              <Link
-                href="#"
-                className="w-10 h-10 bg-white/10 hover:bg-brand-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <Linkedin size={18} />
-              </Link>
-              <Link
-                href="#"
-                className="w-10 h-10 bg-white/10 hover:bg-brand-accent rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <Instagram size={18} />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
               </Link>
             </div>
           </div>
@@ -156,36 +143,41 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="text-brand-accent mt-1 flex-shrink-0" size={18} />
                 <div className="text-green-100">
-                  <p className="font-medium text-white mb-1">Unit-1:</p>
-                  <p className="text-sm">Plot No. 06, Ram Nagar, Sangriya, Jodhpur</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <MapPin className="text-brand-accent mt-1 flex-shrink-0" size={18} />
-                <div className="text-green-100">
-                  <p className="font-medium text-white mb-1">Unit-2:</p>
-                  <p className="text-sm">J-65, RIICO, 1st Phase, Sangriya, Jodhpur</p>
+                  <p className="font-medium text-white mb-1">Address:</p>
+                  <p className="text-sm">J1-65, RIICO 1st Phase, Sangariya, Jodhpur 342008</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <Mail className="text-brand-accent flex-shrink-0" size={18} />
                 <a 
-                  href="mailto:rmt.jodhpur@gmail.com"
+                  href="mailto:jbi.jodhpur@gmail.com"
                   className="text-green-100 hover:text-white transition-colors"
                 >
-                  rmt.jodhpur@gmail.com
+                  jbi.jodhpur@gmail.com
                 </a>
               </div>
               
               <div className="flex items-center gap-3">
                 <Phone className="text-brand-accent flex-shrink-0" size={18} />
+                <div className="text-green-100">
+                  <a href="tel:+919983813366" className="hover:text-white transition-colors block">+91 9983813366</a>
+                  <a href="tel:+919950329359" className="hover:text-white transition-colors block">+91 9950329359</a>
+                  <p className="text-xs mt-1">Moksh: +91 8445403317</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <svg className="text-brand-accent flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
                 <a 
-                  href="tel:+919983813366"
+                  href="https://www.jbijodhpur.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-green-100 hover:text-white transition-colors"
                 >
-                  +91 9983813366
+                  www.jbijodhpur.com
                 </a>
               </div>
               
@@ -203,7 +195,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/20">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <p className="text-green-100 text-center lg:text-left">
-              &copy; {new Date().getFullYear()} Radhika Machine Tools. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Jai Balaji Industries. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-green-100">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">

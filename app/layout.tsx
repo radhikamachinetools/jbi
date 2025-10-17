@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Radhika Machine Tools - Premium Stone Processing Machinery",
-    template: "%s | Radhika Machine Tools"
+    default: "Jai Balaji Industries - Premium Stone Processing Machinery",
+    template: "%s | Jai Balaji Industries"
   },
   description: "Leading manufacturer of stone processing machinery including granite cutting machines, line polishing machines, handling cranes, and epoxy resin lines. Trusted by 500+ industries worldwide.",
   keywords: [
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     "stone machinery manufacturer",
     "industrial machinery",
     "Jodhpur machinery",
-    "Radhika Machine Tools"
+    "Jai Balaji Industries"
   ],
-  authors: [{ name: "Radhika Machine Tools" }],
-  creator: "Radhika Machine Tools",
-  publisher: "Radhika Machine Tools",
+  authors: [{ name: "Jai Balaji Industries" }],
+  creator: "Jai Balaji Industries",
+  publisher: "Jai Balaji Industries",
   formatDetection: {
     email: false,
     address: false,
@@ -38,21 +38,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    title: 'Radhika Machine Tools - Premium Stone Processing Machinery',
+    title: 'Jai Balaji Industries - Premium Stone Processing Machinery',
     description: 'Leading manufacturer of stone processing machinery. Trusted by 500+ industries worldwide.',
-    siteName: 'Radhika Machine Tools',
+    siteName: 'Jai Balaji Industries',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Radhika Machine Tools - Stone Processing Machinery',
+        alt: 'Jai Balaji Industries - Stone Processing Machinery',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Radhika Machine Tools - Premium Stone Processing Machinery',
+    title: 'Jai Balaji Industries - Premium Stone Processing Machinery',
     description: 'Leading manufacturer of stone processing machinery. Trusted by 500+ industries worldwide.',
     images: ['/images/og-image.jpg'],
   },
@@ -98,8 +98,8 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="RMT" />
-        <meta name="application-name" content="Radhika Machine Tools" />
+        <meta name="apple-mobile-web-app-title" content="JBI" />
+        <meta name="application-name" content="Jai Balaji Industries" />
         <meta name="msapplication-TileColor" content="#059669" />
         <meta name="theme-color" content="#059669" />
       </head>
@@ -117,13 +117,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Radhika Machine Tools",
+              "name": "Jai Balaji Industries",
               "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
               "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/images/radhika-logo.png`,
               "description": "Leading manufacturer of stone processing machinery including granite cutting machines, line polishing machines, handling cranes, and epoxy resin lines.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Plot No. 06, Ram Nagar, Sangriya",
+                "streetAddress": "J1-65, RIICO 1st Phase, Sangariya",
                 "addressLocality": "Jodhpur",
                 "addressRegion": "Rajasthan",
                 "addressCountry": "IN"
@@ -132,11 +132,10 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "telephone": "+91-9983813366",
                 "contactType": "customer service",
-                "email": "rmt.jodhpur@gmail.com"
+                "email": "jbi.jodhpur@gmail.com"
               },
               "sameAs": [
-                "https://www.facebook.com/radhikamachinetools",
-                "https://www.linkedin.com/company/radhika-machine-tools"
+                "https://www.jbijodhpur.com"
               ]
             })
           }}

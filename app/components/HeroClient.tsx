@@ -43,7 +43,7 @@ export default function HeroClient() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-lg sm:text-xl lg:text-2xl max-w-4xl mx-auto text-gray-200 leading-relaxed"
         >
-          Radhika Machine Tools delivers precision, durability, and unmatched
+          Jai Balaji Industries delivers precision, durability, and unmatched
           performance in every machine we build. Transform your production with
           cutting-edge technology.
         </motion.p>

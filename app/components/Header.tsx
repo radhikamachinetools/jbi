@@ -36,15 +36,15 @@ const Header = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone size={14} />
-              <span>+91 9983813366</span>
+              <span>+91 9983813366, +91 9950329359</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={14} />
-              <span>rmt.jodhpur@gmail.com</span>
+              <span>jbi.jodhpur@gmail.com</span>
             </div>
           </div>
           <div className="text-xs">
-            Unit-1: Plot No. 06, Ram Nagar, Sangriya, Jodhpur
+            J1-65, RIICO 1st Phase, Sangariya, Jodhpur 342008
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ const Header = () => {
                 <div className="relative">
                   <Image
                     src="/images/radhika-logo.png"
-                    alt="Radhika Machine Tools Logo"
+                    alt="Jai Balaji Industries Logo"
                     width={45}
                     height={45}
                     className="lg:w-[55px] lg:h-[55px] rounded-full ring-2 ring-white/20"
@@ -70,7 +70,7 @@ const Header = () => {
                 </div>
                 <div className="hidden sm:block">
                   <span className="text-xl lg:text-2xl font-bold text-white">
-                    Radhika Machine Tools
+                    Jai Balaji Industries
                   </span>
                   <p className="text-xs text-green-100 -mt-1">
                     Engineering Excellence
