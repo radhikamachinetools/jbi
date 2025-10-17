@@ -78,8 +78,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#22C55E' },
-    { media: '(prefers-color-scheme: dark)', color: '#16A34A' },
+    { media: '(prefers-color-scheme: light)', color: '#8FE5B1' },
+    { media: '(prefers-color-scheme: dark)', color: '#6BD99B' },
   ],
 };
 
@@ -100,8 +100,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="JBI" />
         <meta name="application-name" content="Jai Balaji Industries" />
-        <meta name="msapplication-TileColor" content="#22C55E" />
-        <meta name="theme-color" content="#22C55E" />
+        <meta name="msapplication-TileColor" content="#8FE5B1" />
+        <meta name="theme-color" content="#8FE5B1" />
       </head>
       <body className="antialiased">
         <div className="flex flex-col min-h-screen">

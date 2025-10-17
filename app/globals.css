@@ -6,22 +6,22 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Light Rama Color Theme */
-  --color-brand-green-light: #86EFAC;
-  --color-brand-green: #22C55E;
-  --color-brand-green-dark: #16A34A;
-  --color-brand-green-deeper: #15803D;
-  --color-brand-accent: #FBBF24;
+  /* Custom Rama Color Theme */
+  --color-brand-green-light: #B3F0C7;
+  --color-brand-green: #8FE5B1;
+  --color-brand-green-dark: #6BD99B;
+  --color-brand-green-deeper: #4CAF85;
+  --color-brand-accent: #FFD700;
   
-  /* Light Fresh Colors */
+  /* Fresh Colors */
   --color-dark-gray: #374151;
   --color-medium-gray: #6B7280;
-  --color-light-gray: #F0FDF4;
-  --color-border: #BBF7D0;
-  --color-border-light: #DCFCE7;
+  --color-light-gray: #F0FDF8;
+  --color-border: #C7F2D6;
+  --color-border-light: #E8F9ED;
   
   /* Background & Text */
-  --color-background: #F7FFFC;
+  --color-background: #FAFFFE;
   --color-foreground: #374151;
   --color-muted: #6B7280;
   --color-muted-light: #9CA3AF;
