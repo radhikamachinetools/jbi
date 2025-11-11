@@ -1,7 +1,8 @@
 import ProductCardClient from "../components/ProductCardClient";
-import { Search, Filter } from "lucide-react";
+import { Filter } from "lucide-react";
 import { promises as fs } from 'fs';
 import path from 'path';
+import Header from "../components/Header";
 
 type Product = {
   _id: string;
@@ -39,35 +40,40 @@ export default async function ProductsPage() {
   const categories = Object.keys(productsByCategory);
 
   return (
-    <div className="min-h-screen bg-light-gray">
-      <section className="bg-gradient-to-br from-brand-green-dark to-brand-green text-white py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Our Machinery Collection
-            </h1>
-            <p className="text-xl lg:text-2xl text-green-100 mb-8">
-              Explore our extensive range of high-quality stone processing
-              machinery, engineered for performance and reliability.
-            </p>
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+            Our Products
           </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Machinery Collection
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our extensive range of high-quality stone processing machinery, engineered for performance and reliability.
+          </p>
         </div>
       </section>
 
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
           {products.length > 0 ? (
-            <div className="space-y-16">
+            <div className="space-y-20">
               {categories.map((category) => (
-                <div key={category} className="space-y-8">
+                <div key={category} className="space-y-12">
                   <div className="text-center">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-brand-green-dark mb-4">
+                    <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
                       {category}
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      {category} Machines
                     </h2>
-                    <div className="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
+                    <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {productsByCategory[category].map((product, index) => (
                       <ProductCardClient
                         key={product._id}
@@ -87,7 +93,7 @@ export default async function ProductsPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 No Products Available
               </h3>
-              <p className="text-muted text-lg max-w-md mx-auto">
+              <p className="text-gray-600 text-lg max-w-md mx-auto">
                 No products have been added yet. Please check back later or contact us for more information.
               </p>
             </div>
@@ -95,25 +101,24 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-brand-green-dark text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Can&apos;t Find What You&apos;re Looking For?
+            Can't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            We specialize in custom machinery solutions. Let us know your requirements
-            and we&apos;ll build the perfect machine for your needs.
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            We specialize in custom machinery solutions. Let us know your requirements and we'll build the perfect machine for your needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-brand-accent text-brand-green-dark font-bold py-4 px-8 rounded-full hover:bg-white transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
             >
               Request Custom Quote
             </a>
             <a
               href="tel:+919983813366"
-              className="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-full hover:bg-white hover:text-brand-green-dark transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
             >
               Call Now: +91 9983813366
             </a>

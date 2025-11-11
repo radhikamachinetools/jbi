@@ -95,7 +95,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       type="text"
                       id="company"
                       name="company"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                       placeholder="Your company name"
                     />
                   </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                   <select
                     id="subject"
                     name="subject"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                   >
                     <option value="">Select a subject</option>
                     <option value="product-inquiry">Product Inquiry</option>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                     name="message"
                     rows={6}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                     placeholder="Tell us about your requirements..."
                   ></textarea>
                 </div>

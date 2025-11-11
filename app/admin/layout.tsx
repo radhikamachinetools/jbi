@@ -38,8 +38,8 @@ export default function AdminLayout({
   };
 
   if (loading) {
-    return <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-green"></div>
+    return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
     </div>;
   }
 
@@ -52,17 +52,18 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       <div className="flex">
-        <aside className="w-64 bg-white shadow-sm min-h-screen">
-          <div className="p-6">
-            <h2 className="text-xl font-bold text-gray-900">Admin Panel</h2>
+        <aside className="w-64 bg-white shadow-lg min-h-screen border-r border-gray-200">
+          <div className="p-6 border-b border-gray-200">
+            <h2 className="text-xl font-bold text-gray-900">JBI Admin</h2>
+            <p className="text-sm text-gray-600 mt-1">Content Management</p>
           </div>
           <nav className="mt-6">
             <Link
               href="/admin"
-              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 ${
-                pathname === '/admin' ? 'bg-brand-green text-white hover:bg-brand-green' : ''
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin' ? 'bg-primary text-white hover:bg-primary' : ''
               }`}
             >
               <Package size={20} />
@@ -70,8 +71,8 @@ export default function AdminLayout({
             </Link>
             <Link
               href="/admin/products"
-              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 ${
-                pathname.startsWith('/admin/products') ? 'bg-brand-green text-white hover:bg-brand-green' : ''
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname.startsWith('/admin/products') ? 'bg-primary text-white hover:bg-primary' : ''
               }`}
             >
               <Package size={20} />
@@ -79,8 +80,8 @@ export default function AdminLayout({
             </Link>
             <Link
               href="/admin/contacts"
-              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 ${
-                pathname === '/admin/contacts' ? 'bg-brand-green text-white hover:bg-brand-green' : ''
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/contacts' ? 'bg-primary text-white hover:bg-primary' : ''
               }`}
             >
               <Mail size={20} />
@@ -88,8 +89,8 @@ export default function AdminLayout({
             </Link>
             <Link
               href="/admin/media"
-              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 ${
-                pathname === '/admin/media' ? 'bg-brand-green text-white hover:bg-brand-green' : ''
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/media' ? 'bg-primary text-white hover:bg-primary' : ''
               }`}
             >
               <Image size={20} />
@@ -97,7 +98,7 @@ export default function AdminLayout({
             </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 w-full text-left"
+              className="flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 w-full text-left transition-colors"
             >
               <LogOut size={20} />
               Logout

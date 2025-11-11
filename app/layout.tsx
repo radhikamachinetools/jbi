@@ -2,7 +2,6 @@
 
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -78,8 +77,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#28C8D4' },
-    { media: '(prefers-color-scheme: dark)', color: '#1FB5C1' },
+    { media: '(prefers-color-scheme: light)', color: '#2563EB' },
+    { media: '(prefers-color-scheme: dark)', color: '#1D4ED8' },
   ],
 };
 
@@ -91,21 +90,20 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/radhika-logo.png" sizes="any" />
+        <link rel="icon" href="/images/radhika-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/radhika-logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="JBI" />
         <meta name="application-name" content="Jai Balaji Industries" />
-        <meta name="msapplication-TileColor" content="#28C8D4" />
-        <meta name="theme-color" content="#28C8D4" />
+        <meta name="msapplication-TileColor" content="#2563EB" />
+        <meta name="theme-color" content="#2563EB" />
       </head>
       <body className="antialiased">
         <div className="flex flex-col min-h-screen">
-          <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

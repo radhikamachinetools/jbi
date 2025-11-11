@@ -1,4 +1,3 @@
-// app/components/HeroClient.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -13,7 +12,7 @@ type HeroSettings = {
   stats: { number: string; label: string }[];
 };
 
-export default function HeroClient() {
+export default function OSHHero() {
   const [settings, setSettings] = useState<HeroSettings | null>(null);
 
   useEffect(() => {

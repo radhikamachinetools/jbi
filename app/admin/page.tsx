@@ -47,7 +47,7 @@ export default function AdminDashboard() {
           className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
         >
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <Package className="text-white" size={24} />
             </div>
             <div>
@@ -92,7 +92,7 @@ export default function AdminDashboard() {
         <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Stats</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-2xl font-bold text-brand-green">{stats.totalProducts}</div>
+            <div className="text-2xl font-bold text-primary">{stats.totalProducts}</div>
             <div className="text-sm text-gray-600">Total Products</div>
           </div>
           <div className="text-center">

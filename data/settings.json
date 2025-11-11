@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "title": "Advanced Stone Processing Solutions",
+    "subtitle": "Transform your manufacturing with precision-engineered machinery designed for excellence and reliability",
+    "ctaText": "Explore Products",
+    "backgroundImage": "/images/hero-bg.jpg",
+    "stats": [
+      { "number": "25+", "label": "Years Experience" },
+      { "number": "500+", "label": "Happy Clients" },
+      { "number": "50+", "label": "Machine Models" },
+      { "number": "24/7", "label": "Support" }
+    ]
+  },
+  "about": {
+    "title": "About Jai Balaji Industries",
+    "description": "Leading manufacturer of premium stone processing machinery with over 25 years of industry expertise.",
+    "features": [
+      "ISO Certified Manufacturing",
+      "Global Service Network",
+      "Custom Solutions",
+      "24/7 Technical Support"
+    ]
+  },
+  "services": [
+    {
+      "title": "Custom Manufacturing",
+      "description": "Tailored machinery solutions for your specific requirements",
+      "icon": "wrench"
+    },
+    {
+      "title": "Installation & Setup",
+      "description": "Professional installation and commissioning services",
+      "icon": "settings"
+    },
+    {
+      "title": "Maintenance Support",
+      "description": "Comprehensive maintenance and repair services",
+      "icon": "shield"
+    }
+  ],
+  "contact": {
+    "address": "J1-65, RIICO 1st Phase, Sangariya, Jodhpur 342008 India",
+    "phones": ["+91 9983813366", "+91 9950329359"],
+    "email": "jbi.jodhpur@gmail.com",
+    "website": "www.jbijodhpur.com"
+  }
+}

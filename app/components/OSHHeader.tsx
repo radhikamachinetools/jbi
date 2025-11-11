@@ -1,13 +1,11 @@
-// app/components/Header.tsx
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 
-const Header = () => {
+export default function OSHHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -42,9 +40,8 @@ const Header = () => {
               <span>jbi.jodhpur@gmail.com</span>
             </div>
           </div>
-          <div className="flex items-center space-x-2">
-            <MapPin size={14} />
-            <span>J1-65, RIICO 1st Phase, Sangariya, Jodhpur 342008</span>
+          <div className="text-xs">
+            J1-65, RIICO 1st Phase, Sangariya, Jodhpur 342008
           </div>
         </div>
       </div>
@@ -135,6 +132,4 @@ const Header = () => {
       </header>
     </>
   );
-};
-
-export default Header;
+}
