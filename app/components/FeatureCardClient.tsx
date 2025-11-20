@@ -36,7 +36,7 @@ export default function FeatureCardClient({
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-800 leading-relaxed">
           {children}
         </p>
       </div>
