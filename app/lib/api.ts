@@ -1,20 +1,16 @@
 // lib/api.ts
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 function getAuthHeaders(): HeadersInit {
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("admin_token") : null;
   return {
     "Content-Type": "application/json",
-    ...(token && { Authorization: `Basic ${token}` }),
   };
 }
 
 // Fetch all products
 export async function getProducts() {
-  const res = await fetch(`${API_URL}/products`, {
-    // headers: getAuthHeaders(), //  REMOVE THIS LINE
+  const res = await fetch(`${API_URL}/api/products`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch products");
@@ -23,7 +19,7 @@ export async function getProducts() {
 
 // Create a new product
 export async function createProduct(data: Record<string, unknown>) {
-  const res = await fetch(`${API_URL}/products`, {
+  const res = await fetch(`${API_URL}/api/products`, {
     method: "POST",
     headers: getAuthHeaders(),
     body: JSON.stringify(data),
@@ -32,10 +28,10 @@ export async function createProduct(data: Record<string, unknown>) {
   return res.json();
 }
 
-// ✨ Update an existing product
+// Update an existing product
 export async function updateProduct(id: string, data: Record<string, unknown>) {
-  const res = await fetch(`${API_URL}/products/${id}`, {
-    method: "PATCH",
+  const res = await fetch(`${API_URL}/api/products/${id}`, {
+    method: "PUT",
     headers: getAuthHeaders(),
     body: JSON.stringify(data),
   });
@@ -43,9 +39,9 @@ export async function updateProduct(id: string, data: Record<string, unknown>) {
   return res.json();
 }
 
-// ✨ Delete a product
+// Delete a product
 export async function deleteProduct(id: string) {
-  const res = await fetch(`${API_URL}/products/${id}`, {
+  const res = await fetch(`${API_URL}/api/products/${id}`, {
     method: "DELETE",
     headers: getAuthHeaders(),
   });
@@ -53,8 +49,8 @@ export async function deleteProduct(id: string) {
   return res.json();
 }
 
-export async function deleteMedia(folder: string, filename: string) {
-  const res = await fetch(`${API_URL}/media/${folder}/${filename}`, {
+export async function deleteMedia(id: string) {
+  const res = await fetch(`${API_URL}/api/media/${id}`, {
     method: "DELETE",
     headers: getAuthHeaders(),
   });
@@ -62,20 +58,13 @@ export async function deleteMedia(folder: string, filename: string) {
   return res.json();
 }
 
-export async function uploadFiles(
-  files: File[],
-  folder: "products" | "factory"
-) {
+export async function uploadFiles(files: File[], slug: string) {
   const formData = new FormData();
   files.forEach((file) => formData.append("files", file));
+  formData.append("slug", slug);
 
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("admin_token") : null;
-
-  // ✨ Add folder as a query parameter
-  const res = await fetch(`${API_URL}/media/upload?folder=${folder}`, {
+  const res = await fetch(`${API_URL}/api/upload`, {
     method: "POST",
-    headers: { ...(token && { Authorization: `Basic ${token}` }) },
     body: formData,
   });
 
@@ -84,8 +73,7 @@ export async function uploadFiles(
 }
 
 export async function getMedia() {
-  const res = await fetch(`${API_URL}/media`, {
-    headers: getAuthHeaders(),
+  const res = await fetch(`${API_URL}/api/media`, {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch media");

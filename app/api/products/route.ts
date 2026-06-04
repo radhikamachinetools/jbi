@@ -1,37 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
+import { connectToDatabase } from '../../lib/db';
+import { getAdminSession } from '../../lib/admin-session';
+import { normalizeMongoDocuments } from '../../lib/mongo-utils';
 
 export async function GET() {
   try {
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    return NextResponse.json({ success: true, products });
+    const { db } = await connectToDatabase();
+    const products = await db.collection('jbi_products').find({}).sort({ order: 1 }).toArray();
+    return NextResponse.json({ success: true, products: normalizeMongoDocuments(products) });
   } catch (error) {
-    return NextResponse.json({ success: false, error: 'Failed to fetch products' }, { status: 500 });
+    console.error('GET products error:', error);
+    return NextResponse.json({ success: false, products: [], error: 'Failed to fetch products' });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    
+    if (!(await getAdminSession())) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const productData = await request.json();
+    const { db } = await connectToDatabase();
+
     const newProduct = {
-      id: Date.now().toString(),
-      slug: body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-      ...body,
-      order: products.length + 1
+      ...productData,
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
-    
-    products.push(newProduct);
-    await fs.writeFile(PRODUCTS_FILE, JSON.stringify({ products }, null, 2));
-    
-    return NextResponse.json({ success: true, product: newProduct });
+
+    const result = await db.collection('jbi_products').insertOne(newProduct);
+    return NextResponse.json({ success: true, product: { ...newProduct, _id: result.insertedId.toString(), id: result.insertedId.toString() } });
   } catch (error) {
+    console.error('POST products error:', error);
     return NextResponse.json({ success: false, error: 'Failed to create product' }, { status: 500 });
   }
 }

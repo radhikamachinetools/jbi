@@ -1,48 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-const MEDIA_FILE = path.join(process.cwd(), 'data', 'media.json');
+import { connectToDatabase } from '../../lib/db';
+import { getAdminSession } from '../../lib/admin-session';
+import { normalizeMongoDocuments } from '../../lib/mongo-utils';
 
 export async function GET() {
   try {
-    const data = await fs.readFile(MEDIA_FILE, 'utf8');
-    const { media } = JSON.parse(data);
-    return NextResponse.json({ success: true, media });
-  } catch {
-    return NextResponse.json({ success: true, media: [] });
+    const { db } = await connectToDatabase();
+    const media = await db.collection('jbi_media').find({}).sort({ createdAt: -1 }).toArray();
+    return NextResponse.json({ success: true, media: normalizeMongoDocuments(media) });
+  } catch (error) {
+    console.error('GET media error:', error);
+    return NextResponse.json({ success: false, media: [], error: 'Failed to fetch media' });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const { title, description, url, resource_type, isActive, activeFrom, activeTo } = await request.json();
-    
-    let media = [];
-    try {
-      const data = await fs.readFile(MEDIA_FILE, 'utf8');
-      media = JSON.parse(data).media || [];
-    } catch {
-      // File doesn't exist, start with empty array
+    if (!(await getAdminSession())) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
     }
-    
-    const newMedia = {
-      id: Date.now().toString(),
-      title,
-      description,
-      url,
-      resource_type,
-      isActive,
-      activeFrom,
-      activeTo,
-      createdAt: new Date().toISOString()
-    };
-    
-    media.push(newMedia);
-    await fs.writeFile(MEDIA_FILE, JSON.stringify({ media }, null, 2));
-    
-    return NextResponse.json({ success: true, media: newMedia });
-  } catch {
+
+    const { title, description, url, resource_type, isActive, activeFrom, activeTo } = await request.json();
+    const { db } = await connectToDatabase();
+
+    const newMedia = { title, description, url, resource_type, isActive, activeFrom, activeTo, createdAt: new Date() };
+    const result = await db.collection('jbi_media').insertOne(newMedia);
+    return NextResponse.json({ success: true, media: { ...newMedia, _id: result.insertedId.toString(), id: result.insertedId.toString() } });
+  } catch (error) {
+    console.error('POST media error:', error);
     return NextResponse.json({ success: false, error: 'Failed to save media' }, { status: 500 });
   }
 }

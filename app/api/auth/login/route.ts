@@ -1,22 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-const ADMIN_FILE = path.join(process.cwd(), 'data', 'admin.json');
+import { connectToDatabase } from '../../../lib/db';
+import { createAdminSession } from '../../../lib/admin-session';
 
 export async function POST(request: NextRequest) {
   try {
     const { username, password } = await request.json();
-    const data = await fs.readFile(ADMIN_FILE, 'utf8');
-    const { admin } = JSON.parse(data);
-    
-    if (username === admin.username && password === admin.password) {
+
+    const { db } = await connectToDatabase();
+    const admin = await db.collection('jbi_admin').findOne({ username, password, status: { $ne: 'inactive' } });
+
+    if (admin) {
       const response = NextResponse.json({ success: true, message: 'Login successful' });
-      response.cookies.set('admin-auth', 'true', {
-        httpOnly: false,
-        secure: false,
-        maxAge: 24 * 60 * 60 * 1000,
-        path: '/'
+      response.cookies.set('admin-session', createAdminSession(username), {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24,
+        path: '/',
+      });
+      return response;
+    }
+
+    if (process.env.ADMIN_USERNAME && process.env.ADMIN_PASSWORD && username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+      const response = NextResponse.json({ success: true, message: 'Login successful' });
+      response.cookies.set('admin-session', createAdminSession(username), {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24,
+        path: '/',
       });
       return response;
     }

@@ -1,78 +1,59 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
-
-type Product = {
-  id: string;
-  [key: string]: unknown;
-};
+import { connectToDatabase } from '../../../lib/db';
+import { getAdminSession } from '../../../lib/admin-session';
+import { buildIdFilter, normalizeMongoDocument } from '../../../lib/mongo-utils';
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    const product = products.find((p: Product) => p.id === id);
-    
-    if (!product) {
-      return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
-    }
-    
-    return NextResponse.json({ success: true, product });
-  } catch {
+    const { db } = await connectToDatabase();
+    const product = await db.collection('jbi_products').findOne(buildIdFilter(id));
+    if (!product) return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
+    return NextResponse.json({ success: true, product: normalizeMongoDocument(product) });
+  } catch (error) {
+    console.error('GET product error:', error);
     return NextResponse.json({ success: false, error: 'Failed to fetch product' }, { status: 500 });
   }
 }
 
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    if (!(await getAdminSession())) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { id } = await params;
     const body = await request.json();
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    
-    const index = products.findIndex((p: Product) => p.id === id);
-    if (index === -1) {
-      return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
-    }
-    
-    products[index] = { ...products[index], ...body };
-    await fs.writeFile(PRODUCTS_FILE, JSON.stringify({ products }, null, 2));
-    
-    return NextResponse.json({ success: true, product: products[index] });
-  } catch {
+    const { db } = await connectToDatabase();
+
+    const result = await db.collection('jbi_products').updateOne(
+      buildIdFilter(id),
+      { $set: { ...body, updatedAt: new Date() } }
+    );
+
+    if (result.matchedCount === 0) return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('PUT product error:', error);
     return NextResponse.json({ success: false, error: 'Failed to update product' }, { status: 500 });
   }
 }
 
 export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    if (!(await getAdminSession())) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { id } = await params;
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    
-    const product = products.find((p: Product) => p.id === id);
-    if (!product) {
-      return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
-    }
-    
-    // Remove product folder and images
-    if (product.slug) {
-      const productDir = path.join(process.cwd(), 'public', 'uploads', product.slug as string);
-      try {
-        await fs.rm(productDir, { recursive: true, force: true });
-      } catch (error) {
-        console.log('Product folder not found or already deleted');
-      }
-    }
-    
-    const filteredProducts = products.filter((p: Product) => p.id !== id);
-    await fs.writeFile(PRODUCTS_FILE, JSON.stringify({ products: filteredProducts }, null, 2));
-    
-    return NextResponse.json({ success: true, message: 'Product and images deleted successfully' });
-  } catch {
+    const { db } = await connectToDatabase();
+
+    const result = await db.collection('jbi_products').deleteOne(buildIdFilter(id));
+    if (result.deletedCount === 0) return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
+
+    return NextResponse.json({ success: true, message: 'Product deleted successfully' });
+  } catch (error) {
+    console.error('DELETE product error:', error);
     return NextResponse.json({ success: false, error: 'Failed to delete product' }, { status: 500 });
   }
 }
