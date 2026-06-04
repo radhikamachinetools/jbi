@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { promises as fs } from 'fs';
-import path from 'path';
+import { connectToDatabase } from '../lib/db';
+import { normalizeMongoDocuments } from '../lib/mongo-utils';
 
 type GalleryCategory = {
   _id: string;
@@ -22,13 +22,14 @@ type GalleryItem = {
 
 async function getGalleryData(): Promise<{ categories: GalleryCategory[], items: GalleryItem[] }> {
   try {
-    const GALLERY_FILE = path.join(process.cwd(), 'data', 'gallery.json');
-    const data = await fs.readFile(GALLERY_FILE, 'utf8');
-    const galleryData = JSON.parse(data);
-    
+    const { db } = await connectToDatabase();
+    const [categories, items] = await Promise.all([
+      db.collection('jbi_gallery_categories').find({}).sort({ displayOrder: 1 }).toArray(),
+      db.collection('jbi_gallery_items').find({}).sort({ displayOrder: 1 }).toArray(),
+    ]);
     return {
-      categories: galleryData.galleryCategories.sort((a: GalleryCategory, b: GalleryCategory) => (a.displayOrder || 0) - (b.displayOrder || 0)),
-      items: galleryData.galleryItems.sort((a: GalleryItem, b: GalleryItem) => (a.displayOrder || 0) - (b.displayOrder || 0))
+      categories: normalizeMongoDocuments(categories) as unknown as GalleryCategory[],
+      items: normalizeMongoDocuments(items) as unknown as GalleryItem[]
     };
   } catch (error) {
     console.error("Failed to fetch gallery data:", error);

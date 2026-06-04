@@ -1,7 +1,7 @@
 import ProductCardClient from "../components/ProductCardClient";
 import { Filter } from "lucide-react";
-import { promises as fs } from 'fs';
-import path from 'path';
+import { connectToDatabase } from '../lib/db';
+import { normalizeMongoDocuments } from '../lib/mongo-utils';
 import Header from "../components/Header";
 
 type Product = {
@@ -15,10 +15,9 @@ type Product = {
 
 async function getProducts(): Promise<Product[]> {
   try {
-    const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    return products;
+    const { db } = await connectToDatabase();
+    const products = await db.collection('jbi_products').find({}).sort({ order: 1 }).toArray();
+    return normalizeMongoDocuments(products) as unknown as Product[];
   } catch (error) {
     console.error("Error fetching products:", error);
     return [];

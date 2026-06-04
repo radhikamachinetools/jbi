@@ -1,6 +1,6 @@
 import { ShieldCheck, Wrench, Trophy, Award, Users, Clock } from "lucide-react";
-import { promises as fs } from 'fs';
-import path from 'path';
+import { connectToDatabase } from './lib/db';
+import { normalizeMongoDocuments } from './lib/mongo-utils';
 
 import HeroClient from "./components/HeroClient";
 import FeatureCardClient from "./components/FeatureCardClient";
@@ -22,13 +22,9 @@ type Product = {
 
 async function getFeaturedProducts(): Promise<Product[]> {
   try {
-    const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    
-    return products
-      .filter((p: Product) => p.isFeatured)
-      .sort((a: Product, b: Product) => (a.order || 0) - (b.order || 0));
+    const { db } = await connectToDatabase();
+    const products = await db.collection('jbi_products').find({ isFeatured: true }).sort({ order: 1 }).toArray();
+    return normalizeMongoDocuments(products) as unknown as Product[];
   } catch (error) {
     console.error("Failed to fetch products:", error);
     return [];

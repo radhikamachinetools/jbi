@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { promises as fs } from 'fs';
-import path from 'path';
 import { notFound } from 'next/navigation';
+import { connectToDatabase } from '../../lib/db';
+import { normalizeMongoDocuments } from '../../lib/mongo-utils';
 
 type GalleryCategory = {
   _id: string;
@@ -23,18 +23,19 @@ type GalleryItem = {
 
 async function getGalleryData(slug: string): Promise<{ category: GalleryCategory | null, items: GalleryItem[] }> {
   try {
-    const GALLERY_FILE = path.join(process.cwd(), 'data', 'gallery.json');
-    const data = await fs.readFile(GALLERY_FILE, 'utf8');
-    const galleryData = JSON.parse(data);
-    
-    const category = galleryData.galleryCategories.find((c: GalleryCategory) => c.slug === slug);
+    const { db } = await connectToDatabase();
+    const category = await db.collection('jbi_gallery_categories').findOne({ slug });
     if (!category) return { category: null, items: [] };
-    
-    const items = galleryData.galleryItems
-      .filter((item: GalleryItem) => item.categoryId === category._id)
-      .sort((a: GalleryItem, b: GalleryItem) => (a.displayOrder || 0) - (b.displayOrder || 0));
-    
-    return { category, items };
+
+    const items = await db.collection('jbi_gallery_items')
+      .find({ categoryId: category._id.toString() })
+      .sort({ displayOrder: 1 })
+      .toArray();
+
+    return {
+      category: { ...category, _id: category._id.toString() } as unknown as GalleryCategory,
+      items: normalizeMongoDocuments(items) as unknown as GalleryItem[]
+    };
   } catch (error) {
     console.error("Failed to fetch gallery data:", error);
     return { category: null, items: [] };

@@ -1,7 +1,6 @@
 import { ArrowLeft, Phone, Mail } from "lucide-react";
 import Link from "next/link";
-import { promises as fs } from 'fs';
-import path from 'path';
+import { connectToDatabase } from '../../lib/db';
 import ProductImageGallery from "./components/ProductImageGallery";
 
 type Product = {
@@ -23,10 +22,10 @@ type Product = {
 
 async function getProduct(slug: string): Promise<Product | null> {
   try {
-    const PRODUCTS_FILE = path.join(process.cwd(), 'data', 'products.json');
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
-    const { products } = JSON.parse(data);
-    return products.find((p: Product) => p.slug === slug) || null;
+    const { db } = await connectToDatabase();
+    const product = await db.collection('jbi_products').findOne({ slug });
+    if (!product) return null;
+    return { ...product, _id: product._id.toString(), id: product._id.toString() } as unknown as Product;
   } catch (error) {
     console.error("Error fetching product:", error);
     return null;
