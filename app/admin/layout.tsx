@@ -63,8 +63,13 @@ export default function AdminLayout({
       <div className="flex">
         <aside className="w-64 bg-white shadow-lg min-h-screen border-r border-gray-200">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">JBI Admin</h2>
-            <p className="text-sm text-gray-600 mt-1">Content Management</p>
+            <div className="flex items-center gap-3">
+              <img src="/jbilogo.jpeg" alt="JBI" className="w-10 h-10 rounded-lg" />
+              <div>
+                <h2 className="text-sm font-bold text-gray-900">Admin Panel</h2>
+                <p className="text-xs text-gray-500">Content Management</p>
+              </div>
+            </div>
           </div>
           <nav className="mt-6">
             <Link href="/admin" className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${pathname === '/admin' ? 'bg-brand-green text-white hover:bg-brand-green' : ''}`}>
@@ -96,7 +101,14 @@ export default function AdminLayout({
             </button>
           </nav>
         </aside>
-        <main className="flex-1 p-8">{children}</main>
+        <main className="flex-1 p-8">
+          {children}
+          <footer className="mt-12 pt-6 border-t border-gray-200 text-center">
+            <a href="https://techrover.co.in" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-brand-green transition-colors">
+              Developed with ❤️ by <span className="font-medium">Team TechRover</span>
+            </a>
+          </footer>
+        </main>
       </div>
     </div>
   );

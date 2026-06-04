@@ -6,16 +6,16 @@ import Footer from "./Footer";
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAdmin = pathname.startsWith("/admin") && pathname !== "/admin/login";
+  const hideHeaderFooter = pathname.startsWith("/admin") && pathname !== "/admin/login";
 
-  if (isAdmin) {
+  if (hideHeaderFooter) {
     return <>{children}</>;
   }
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 flex flex-col">{children}</main>
       <Footer />
     </div>
   );
