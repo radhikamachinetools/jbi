@@ -7,7 +7,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Gem, Lightbulb, Handshake, Target } from "lucide-react";
 import { ReactNode } from "react";
-import Header from "../components/Header";
 
 const ValueCard = ({
   icon,
@@ -36,7 +35,6 @@ const ValueCard = ({
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">

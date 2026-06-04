@@ -2,7 +2,6 @@ import ProductCardClient from "../components/ProductCardClient";
 import { Filter } from "lucide-react";
 import { connectToDatabase } from '../lib/db';
 import { normalizeMongoDocuments } from '../lib/mongo-utils';
-import Header from "../components/Header";
 
 type Product = {
   _id: string;
@@ -40,7 +39,7 @@ export default async function ProductsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+
       
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 text-center">
