@@ -16,7 +16,7 @@ const Footer = () => {
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="relative">
                 <Image
-                  src="/images/radhika-logo.png"
+                  src="/jbilogo.jpeg"
                   alt="Jai Balaji Industries Logo"
                   width={50}
                   height={50}

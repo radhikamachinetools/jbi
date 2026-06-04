@@ -44,7 +44,7 @@ export default async function ProductsPage() {
       
       <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-green/10 text-brand-green rounded-full text-sm font-medium mb-6">
             Our Products
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -69,7 +69,7 @@ export default async function ProductsPage() {
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                       {category} Machines
                     </h2>
-                    <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                    <div className="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,7 +100,7 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-primary text-white">
+      <section className="py-16 bg-brand-green text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Can&apos;t Find What You&apos;re Looking For?
@@ -111,13 +111,13 @@ export default async function ProductsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-green font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
             >
               Request Custom Quote
             </a>
             <a
               href="tel:+919983813366"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-green transition-colors duration-200"
             >
               Call Now: +91 9983813366
             </a>

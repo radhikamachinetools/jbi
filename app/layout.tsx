@@ -91,9 +91,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/jbilogo.jpeg" sizes="any" />
+        <link rel="icon" href="/jbilogo.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/jbilogo.jpeg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,7 +119,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Jai Balaji Industries",
               "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-              "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/images/radhika-logo.png`,
+              "logo": `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/jbilogo.jpeg`,
               "description": "Leading manufacturer of stone processing machinery including granite cutting machines, line polishing machines, handling cranes, and epoxy resin lines.",
               "address": {
                 "@type": "PostalAddress",

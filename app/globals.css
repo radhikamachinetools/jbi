@@ -14,12 +14,12 @@
   --color-accent: #F59E0B;
   --color-dark: #0F172A;
 
-  /* Brand Green (required for shared components) */
-  --color-brand-green-light: #14B8A6;
-  --color-brand-green: #0F766E;
-  --color-brand-green-dark: #0D5B56;
-  --color-brand-green-deeper: #134E4A;
-  --color-brand-accent: #5EEAD4;
+  /* Brand Green (site theme based on JBI logo - blue/teal) */
+  --color-brand-green-light: #0EA5E9;
+  --color-brand-green: #0369A1;
+  --color-brand-green-dark: #075985;
+  --color-brand-green-deeper: #0C4A6E;
+  --color-brand-accent: #7DD3FC;
 
   /* Neutral Colors */
   --color-light-gray: #F9FAFB;

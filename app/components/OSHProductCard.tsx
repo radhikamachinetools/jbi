@@ -57,7 +57,7 @@ export default function OSHProductCard({ product, index }: OSHProductCardProps) 
 
       {/* Content Section */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-green transition-colors duration-300">
           {product.name}
         </h3>
         
@@ -75,7 +75,7 @@ export default function OSHProductCard({ product, index }: OSHProductCardProps) 
         {/* CTA */}
         <Link
           href={`/products/${product.slug}`}
-          className="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-50 text-gray-700 font-medium rounded-lg hover:bg-primary hover:text-white transition-all duration-300 group/btn"
+          className="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-50 text-gray-700 font-medium rounded-lg hover:bg-brand-green hover:text-white transition-all duration-300 group/btn"
         >
           View Details
           <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -83,7 +83,7 @@ export default function OSHProductCard({ product, index }: OSHProductCardProps) 
       </div>
 
       {/* Hover Effect */}
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/20 rounded-xl transition-all duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-green/20 rounded-xl transition-all duration-300 pointer-events-none"></div>
     </motion.div>
   );
 }

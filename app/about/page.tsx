@@ -25,7 +25,7 @@ const ValueCard = ({
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
   >
-    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
+    <div className="w-16 h-16 bg-brand-green/10 rounded-xl flex items-center justify-center mx-auto mb-6 text-brand-green">
       {icon}
     </div>
     <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
@@ -46,7 +46,7 @@ export default function AboutUsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-brand-green/10 text-brand-green rounded-full text-sm font-medium mb-6">
               About Our Company
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -89,19 +89,19 @@ export default function AboutUsPage() {
               <div className="bg-gray-100 rounded-2xl p-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">30+</div>
+                    <div className="text-3xl font-bold text-brand-green mb-2">30+</div>
                     <div className="text-gray-600">Years Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                    <div className="text-3xl font-bold text-brand-green mb-2">500+</div>
                     <div className="text-gray-600">Happy Clients</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                    <div className="text-3xl font-bold text-brand-green mb-2">50+</div>
                     <div className="text-gray-600">Machine Models</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                    <div className="text-3xl font-bold text-brand-green mb-2">24/7</div>
                     <div className="text-gray-600">Support</div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 lg:py-24 bg-primary text-white">
+      <section className="py-16 lg:py-24 bg-brand-green text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -160,13 +160,13 @@ export default function AboutUsPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-green font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 View Our Machines
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-green transition-colors duration-200"
               >
                 Contact Us
               </Link>

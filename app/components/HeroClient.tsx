@@ -39,7 +39,7 @@ export default function HeroClient() {
       });
   }, []);
 
-  if (!settings) return <div className="h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full"></div></div>;
+  if (!settings) return <div className="h-screen flex items-center justify-center"><div className="animate-spin w-8 h-8 border-4 border-brand-green border-t-transparent rounded-full"></div></div>;
 
   const features = [
     "ISO Certified Manufacturing",
@@ -71,9 +71,9 @@ export default function HeroClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+              className="inline-flex items-center px-4 py-2 bg-brand-green/10 text-brand-green rounded-full text-sm font-medium"
             >
-              <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+              <span className="w-2 h-2 bg-brand-green rounded-full mr-2"></span>
               Trusted by 500+ Industries
             </motion.div>
 
@@ -121,7 +121,7 @@ export default function HeroClient() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors duration-200 group"
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-green text-white font-semibold rounded-lg hover:bg-brand-green-dark transition-colors duration-200 group"
               >
                 {settings.ctaText}
                 <ArrowRight size={20} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
@@ -129,7 +129,7 @@ export default function HeroClient() {
               
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary hover:text-primary transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-brand-green hover:text-brand-green transition-colors duration-200"
               >
                 <Play size={18} className="mr-2" />
                 Watch Demo
@@ -154,7 +154,7 @@ export default function HeroClient() {
                     transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                    <div className="text-3xl lg:text-4xl font-bold text-brand-green mb-2">
                       {stat.number}
                     </div>
                     <div className="text-gray-600 font-medium">
@@ -166,7 +166,7 @@ export default function HeroClient() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-brand-green/10 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/10 rounded-full blur-xl"></div>
           </motion.div>
         </div>

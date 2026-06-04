@@ -55,7 +55,7 @@ export default function OSHHeader() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/images/radhika-logo.png"
+                src="/jbilogo.jpeg"
                 alt="Jai Balaji Industries"
                 width={40}
                 height={40}
@@ -65,7 +65,7 @@ export default function OSHHeader() {
                 <h1 className="text-xl font-bold text-gray-900">
                   Jai Balaji Industries
                 </h1>
-                <p className="text-xs text-primary font-medium">
+                <p className="text-xs text-brand-green font-medium">
                   Engineering Excellence
                 </p>
               </div>
@@ -77,10 +77,10 @@ export default function OSHHeader() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative group"
+                  className="text-gray-700 hover:text-brand-green font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-green transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </nav>
@@ -89,7 +89,7 @@ export default function OSHHeader() {
             <div className="hidden lg:block">
               <Link
                 href="/contact"
-                className="bg-primary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-dark transition-colors duration-200"
+                className="bg-brand-green text-white px-6 py-2.5 rounded-lg font-medium hover:bg-brand-green-dark transition-colors duration-200"
               >
                 Get Quote
               </Link>
@@ -114,7 +114,7 @@ export default function OSHHeader() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-700 hover:text-primary font-medium transition-colors"
+                  className="block py-2 text-gray-700 hover:text-brand-green font-medium transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -122,7 +122,7 @@ export default function OSHHeader() {
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-center bg-primary text-white py-3 rounded-lg font-medium mt-4"
+                className="block w-full text-center bg-brand-green text-white py-3 rounded-lg font-medium mt-4"
               >
                 Get Quote
               </Link>
