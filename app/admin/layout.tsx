@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Package, Mail, Image, LogOut } from "lucide-react";
+import { Package, Mail, Image, LogOut, FolderOpen, Award, ImageIcon, Building2 } from "lucide-react";
 
 export default function AdminLayout({
   children,
@@ -70,6 +70,15 @@ export default function AdminLayout({
               Dashboard
             </Link>
             <Link
+              href="/admin/categories"
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/categories' ? 'bg-primary text-white hover:bg-primary' : ''
+              }`}
+            >
+              <FolderOpen size={20} />
+              Categories
+            </Link>
+            <Link
               href="/admin/products"
               className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
                 pathname.startsWith('/admin/products') ? 'bg-primary text-white hover:bg-primary' : ''
@@ -86,6 +95,33 @@ export default function AdminLayout({
             >
               <Mail size={20} />
               Contacts
+            </Link>
+            <Link
+              href="/admin/certificates"
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/certificates' ? 'bg-primary text-white hover:bg-primary' : ''
+              }`}
+            >
+              <Award size={20} />
+              Certificates
+            </Link>
+            <Link
+              href="/admin/gallery"
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/gallery' ? 'bg-primary text-white hover:bg-primary' : ''
+              }`}
+            >
+              <ImageIcon size={20} />
+              Gallery
+            </Link>
+            <Link
+              href="/admin/infrastructure"
+              className={`flex items-center gap-3 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors ${
+                pathname === '/admin/infrastructure' ? 'bg-primary text-white hover:bg-primary' : ''
+              }`}
+            >
+              <Building2 size={20} />
+              Infrastructure
             </Link>
             <Link
               href="/admin/media"

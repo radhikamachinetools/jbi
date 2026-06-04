@@ -86,6 +86,36 @@ export default function AdminDashboard() {
             </div>
           </div>
         </Link>
+
+        <Link
+          href="/admin/infrastructure"
+          className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Package className="text-white" size={24} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Infrastructure</h3>
+              <p className="text-sm text-gray-600">Manage facility media</p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          href="/admin/certificates"
+          className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Package className="text-white" size={24} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Certificates</h3>
+              <p className="text-sm text-gray-600">Manage certifications</p>
+            </div>
+          </div>
+        </Link>
       </div>
 
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
