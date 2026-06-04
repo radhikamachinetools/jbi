@@ -122,7 +122,7 @@ export default function GalleryAdmin() {
         }
         
         if (editingItem) {
-          const res = await fetch(`/api/gallery/categories/${(editingItem as GalleryCategory)._id}`, {
+          const res = await fetch(`/api/gallery/categories/${(editingItem as any)._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: finalFormData.name, headerImage: finalFormData.headerImage, displayOrder: finalFormData.displayOrder })
@@ -199,7 +199,7 @@ export default function GalleryAdmin() {
           };
           
           if (editingItem) {
-            const res = await fetch(`/api/gallery/items/${(editingItem as GalleryItem)._id}`, {
+            const res = await fetch(`/api/gallery/items/${(editingItem as any)._id}`, {
               method: 'PUT',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(payload)
