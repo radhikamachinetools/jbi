@@ -13,6 +13,22 @@
   --color-secondary: #06B6D4;
   --color-accent: #F59E0B;
   --color-dark: #0F172A;
+
+  /* Brand Green (required for shared components) */
+  --color-brand-green-light: #14B8A6;
+  --color-brand-green: #0F766E;
+  --color-brand-green-dark: #0D5B56;
+  --color-brand-green-deeper: #134E4A;
+  --color-brand-accent: #5EEAD4;
+
+  /* Neutral Colors */
+  --color-light-gray: #F9FAFB;
+  --color-dark-gray: #111827;
+  --color-medium-gray: #374151;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+  --color-muted: #6B7280;
+  --color-muted-light: #9CA3AF;
   
   /* Clean Modern Colors */
   --color-gray-50: #F9FAFB;
@@ -29,8 +45,6 @@
   /* Background & Text */
   --color-background: #FFFFFF;
   --color-foreground: #111827;
-  --color-muted: #6B7280;
-  --color-muted-light: #9CA3AF;
   
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -204,8 +218,8 @@ body {
   }
 }
 
-/* Focus styles */
-:focus-visible {
+/* Focus styles - only for elements without Tailwind focus rings */
+:focus-visible:not(input):not(textarea):not(select):not(button) {
   outline: 2px solid var(--color-brand-green);
   outline-offset: 2px;
 }
