@@ -12,7 +12,7 @@ type Product = {
   imageUrl?: string;
   shortDescription: string;
   features?: string[];
-  specifications?: any;
+  specifications?: Record<string, unknown>;
 };
 
 type ProductHeroCarouselProps = {

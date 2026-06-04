@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowLeft, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import { promises as fs } from 'fs';
