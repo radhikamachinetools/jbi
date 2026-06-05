@@ -216,7 +216,7 @@ export default function ContactPage() {
                         href="mailto:rmt.jodhpur@gmail.com"
                         className="text-brand-green hover:text-brand-green-dark transition-colors"
                       >
-                        rmt.jodhpur@gmail.com
+                        jbi.jodhpur@gmail.com
                       </a>
                     </div>
                   </div>
@@ -301,7 +301,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Radhika Machine Tools Location"
+              title="Jai Balaji Industries Location"
             ></iframe>
           </div>
         </div>

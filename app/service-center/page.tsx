@@ -8,7 +8,7 @@ export default function ServiceCenterPage() {
     <InfoPageLayout title="Service & Support Center">
       <h2>Our Commitment to You</h2>
       <p>
-        At Radhika Machineries, our relationship with our clients extends far
+        At Jai Balaji Industries, our relationship with our clients extends far
         beyond the sale. We understand that your productivity depends on the
         reliability and performance of our machines. Our dedicated Service
         Center is committed to providing comprehensive after-sales support to

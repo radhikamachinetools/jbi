@@ -27,7 +27,7 @@ export default function FaqPage() {
     {
       question: "How can I order genuine spare parts?",
       answer:
-        "To order spare parts, please contact our Service Center with your machine's model number and the required part details. Using genuine Radhika Machineries parts ensures the best performance and longevity of your equipment.",
+        "To order spare parts, please contact our Service Center with your machine's model number and the required part details. Using genuine Jai Balaji Industries parts ensures the best performance and longevity of your equipment.",
     },
     {
       question: "Do you ship your machinery internationally?",

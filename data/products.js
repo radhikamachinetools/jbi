@@ -8,7 +8,7 @@ export const products = [
     category: 'Granite Cutting Machines',
     image: '/images/single-blade-cutter-image.webp',
     shortDescription: 'Precision cutting for all types of granite slabs. High efficiency and robust build.',
-    description: 'The Radhika Single Blade Granite Cutter is engineered for perfection. It offers unparalleled precision in cutting granite and other hard stones. With a powerful motor and a durable frame, this machine is designed for continuous operation in demanding environments. Its user-friendly interface ensures ease of operation, maximizing productivity while minimizing waste.',
+    description: 'The Jai Balaji Industries Single Blade Granite Cutter is engineered for perfection. It offers unparalleled precision in cutting granite and other hard stones. With a powerful motor and a durable frame, this machine is designed for continuous operation in demanding environments. Its user-friendly interface ensures ease of operation, maximizing productivity while minimizing waste.',
     keyFeatures: [
       'High-precision 20HP motor',
       'Laser guide for accurate cutting alignment',
@@ -92,7 +92,7 @@ export const products = [
     category: 'Line Polishing Machines',
     image: '/images/single-blade-cutter-image.webp', // Placeholder
     shortDescription: 'Achieve a mirror-like finish on your stone slabs with our automated polishing line.',
-    description: 'The Radhika Automatic Line Polishing Machine delivers a flawless, high-gloss finish on marble, granite, and other stone surfaces. With multiple polishing heads and an intelligent pressure control system, it ensures consistent quality across the entire slab. The conveyor system allows for a continuous workflow, drastically increasing your facility\'s output.',
+    description: 'The Jai Balaji Industries Automatic Line Polishing Machine delivers a flawless, high-gloss finish on marble, granite, and other stone surfaces. With multiple polishing heads and an intelligent pressure control system, it ensures consistent quality across the entire slab. The conveyor system allows for a continuous workflow, drastically increasing your facility\'s output.',
     keyFeatures: [
         '16 to 24 polishing heads',
         'PLC touch screen for easy programming',

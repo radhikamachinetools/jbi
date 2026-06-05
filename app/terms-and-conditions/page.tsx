@@ -14,7 +14,7 @@ export default function TermsAndConditionsPage() {
       <h2>2. Use License & Intellectual Property</h2>
       <p>
         The content, logos, graphics, and other intellectual property on this
-        site are the property of Radhika Machineries and are protected by
+        site are the property of Jai Balaji Industries and are protected by
         copyright and trademark laws. Permission is granted to temporarily
         download one copy of the materials for personal, non-commercial
         transitory viewing only.
@@ -31,7 +31,7 @@ export default function TermsAndConditionsPage() {
 
       <h2>4. Limitation of Liability</h2>
       <p>
-        In no event shall Radhika Machineries be liable for any damages arising
+        In no event shall Jai Balaji Industries be liable for any damages arising
         out of the use or inability to use the materials on our website, even if
         we have been notified orally or in writing of the possibility of such
         damage.
@@ -39,7 +39,7 @@ export default function TermsAndConditionsPage() {
 
       <h2>5. Governing Law</h2>
       <p>
-        Any claim relating to Radhika Machineries&apos; website shall be
+        Any claim relating to Jai Balaji Industries&apos; website shall be
         governed by the laws of the State of Rajasthan, India without regard to
         its conflict of law provisions.
       </p>
